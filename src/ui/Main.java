@@ -364,6 +364,7 @@ public class Main {
       System.out.println(prototype.infoCategoryMagazine());
    }
 
+   //METODO PARA MOSTRAR LOS PRODUCTOS MAS LEIDOS
    public void mostRead(){
       System.out.println(prototype.mostRead());
    }
