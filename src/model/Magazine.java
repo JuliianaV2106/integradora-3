@@ -15,6 +15,11 @@ public class Magazine extends BibligraphicProduct{
         this.periodicity = periodicity;
         this.suscriptionValue = suscriptionValue;
             }
+            // This is a constructor that creates a new Magazine object by copying the values of an
+            // existing Magazine object. It calls the superclass constructor with the same parameters
+            // as the existing Magazine object, and then sets the values of the category, periodicity,
+            // and subscriptionValue variables to the corresponding values of the existing Magazine
+            // object.
             public Magazine(Magazine magazine){
             super(magazine.getProductID(),magazine.getProductName(),magazine.getPublicationDate(),
             magazine.getNumberPag(),magazine.getUrl(),magazine.getDescription());
@@ -46,8 +51,12 @@ public class Magazine extends BibligraphicProduct{
     public void setSubcriptionActive(int subcriptionActive) {
         this.subcriptionActive = subcriptionActive;
     }
-    public void suscribeMagazine() {
-        subcriptionActive++;
+    /**
+     * The function "affordar" increases the value of the "subscriptionActive" variable by 1.
+     */
+    public void affordar() {
+        setSubcriptionActive( getSubcriptionActive() +1);
+
     }
     
    

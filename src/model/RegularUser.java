@@ -15,7 +15,6 @@ public class RegularUser extends User {
         this.readPagMagazine =0;
         
     }
-   
     public int getReadPagBook() {
         return readPagBook;
     }
@@ -29,17 +28,22 @@ public class RegularUser extends User {
         this.readPagMagazine = readPagMagazine;
     }
    
-    public void buy(Affordable affordable){
-        if(affordable instanceof Book){
+   // The `buy` method is adding a new `Affordable` object to the user's collection of books or
+   // magazines, depending on the type of the object passed as a parameter. If the object is a `Book`,
+   // it is added to the `books` array, and if it is a `Magazine`, it is added to the `magazines`
+   // array. The method checks for the first available slot in the corresponding array and adds the
+   // object to that slot.
+    public void buy(Affordable bill){
+        if(bill instanceof Book){
             for(int i = 0; i <books.length; i++){
                 if (books[i]==null){
-                    books[i]= (Book) affordable;
+                    books[i]= (Book) bill;
                 }
             }
         }else {
             for (int i=0; i<magazines.length; i++){
                 if(magazines[i]==null){
-                    magazines[i]= (Magazine) affordable;
+                    magazines[i]= (Magazine) bill;
                 }
             }
         }

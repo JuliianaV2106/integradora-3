@@ -1,6 +1,6 @@
 package model;
 import java.time.LocalDate;
-public abstract class BibligraphicProduct {
+public abstract class BibligraphicProduct implements Affordable {
     
     private String productID;
     private String productName;

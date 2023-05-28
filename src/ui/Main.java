@@ -100,7 +100,8 @@ public class Main {
                   repetirmenu();
                   break;
               case 12:
-                  top5();
+                   top5Book();
+                   top5Magazine();
                   repetirmenu();
                   break;
               case 13:
@@ -114,9 +115,9 @@ public class Main {
                   break;
 
               case 15:
-                x = 1;
-                 System.out.println("THANKS FOR USING THE PROGRAM.");
-              
+              x = 1;
+              System.out.println("THANKS FOR USING THE PROGRAM.");
+               
                   break;
       
               default:
@@ -149,7 +150,7 @@ public class Main {
       switch(userType){
 
           case "1":
-               System.out.println(prototype.regularUserRegister(userName, userID, vinculationDate));
+               System.out.println(prototype.regularUserRegister( userID,userName, vinculationDate));
               break;
           case "2":
               System.out.println(prototype.premiumUserRegister(userID, userName, vinculationDate));
@@ -292,10 +293,15 @@ public class Main {
    
    public void affordarProduct(){
       lector.nextLine();
+      String id, productID;
+      System.out.println("ID of the books are ");
+      System.out.println(prototype.showIdBooks());
+      System.out.println("ID of the magazines are ");
+      System.out.println(prototype.showIdMagazine());
       System.out.println("Enter the book ID you want to bibliographic product");
-      String productID = lector.nextLine();
+      productID = lector.nextLine();
       System.out.println("Enter the id user");
-      String id = lector.nextLine();
+      id = lector.nextLine();
       System.out.println(prototype.affordarProduct(id,productID));
    }
       
@@ -333,6 +339,10 @@ public class Main {
    }
    public void saveLibrary(){
       lector.nextLine();
+      System.out.println("ID of the books are:");
+      System.out.println(prototype.showIdBooks());
+      System.out.println("ID of the magazines are: ");
+      System.out.println(prototype.showIdMagazine());
       System.out.println("Enter the user id");
       String id = lector.nextLine();
       System.out.println("Enter the product id");
@@ -351,10 +361,12 @@ public class Main {
       System.out.println(prototype.acumulateReadPag());
     }
 
-   public void top5(){
+   public void top5Book(){
       System.out.println(prototype.top5book());
-      System.out.println(prototype.top5Magazine());
+      
    }
+   public void top5Magazine(){
+      System.out.println(prototype.top5Magazine());}
    
    public void infoGanderBook(){
       System.out.println(prototype.infoGanderBook());
@@ -364,7 +376,7 @@ public class Main {
       System.out.println(prototype.infoCategoryMagazine());
    }
 
-   //METODO PARA MOSTRAR LOS PRODUCTOS MAS LEIDOS
+   
    public void mostRead(){
       System.out.println(prototype.mostRead());
    }
